@@ -1,0 +1,24 @@
+{
+    "name": "Dammykeys04",
+    "short_name": "Dammykeys",
+    "id": "/",
+    "start_url": "index.html",
+    "orientation": "portrait-primary",
+    "description": "Payment Platform",
+    "background_color": "#cfd8dc",
+    "theme_color": "#ffffff",
+    "display": "standalone",
+    "version": "1.0",
+    "icons": [
+        {
+            "src": "images/dammykeys04.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "images/dammykeys04_logo.png",
+            "sizes": "500x500",
+            "type": "image/png"
+        }
+    ]
+}
