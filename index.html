@@ -6,31 +6,34 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#607d8b">
-  <title>Dammykeys04</title>
+  <title>Dammykeys04 | Homepage</title>
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="#">
+  <link rel="shortcut icon" href="../images/dammykeys04_logo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>
   <nav class="sidenav-trigger1  white" role="navigation">
     <div class="nav-wrapper">
-      <a id="logo-container" href="#" class="brand-logo">Dammykeys04</a>
+      <a id="logo-container" href="#" class="brand-logo">
+        <img id="logo" src="images/dammykeys04_logo.png" alt="Logo" />
+      </a>
 
       <ul class="right hide-on-med-and-down">
         <li><a href="#"><i class="material-icons left">home</i> Home</a></li>
-        <li><a href="#"><i class="material-icons left">search</i>Stores</a></li>
-        <li><a href="#"><i class="material-icons left">shop</i>Cart</a></li>
-        <li><a href="#"><i class="material-icons left">info</i>About</a></li>
+        <li><a href="../src/payment.html"><i class=" material-icons left">payment</i>Pay</a></li>
+        <li><a href="#"><i class="material-icons left">reorder</i>Invoice</a></li>
+        <li><a href="#"><i class="material-icons left">person</i>Login</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#"><i class="material-icons left">home</i> Home</a></li>
-        <li><a href="#"><i class="material-icons left">search</i>Stores</a></li>
-        <li><a href="#"><i class="material-icons left">shop</i>Cart</a></li>
-        <li><a href="#"><i class="material-icons left">info</i>About</a></li>
+        <li><a href="../index.html"><i class="material-icons left">home</i> Home</a></li>
+        <li><a href="../src/payment.html"><i class="material-icons left">payment</i>Pay</a></li>
+        <li><a href="#"><i class="material-icons left">reorder</i>Invoice</a></li>
+        <li><a href="#"><i class="material-icons left">person</i>Login</a></li>
       </ul>
 
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -41,49 +44,26 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+        <h1 class="header center teal-text text-lighten-2">e-Payment</h1>
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light">This is our offical online platform for e-payments, capable of accepting
+            different kind of cards, USSD transactions etc.</h5>
         </div>
         <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button"
-            class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+          <a href="../src/payment.html" id="download-button"
+            class="btn-large waves-effect waves-light teal lighten-1">Make payment</a>
         </div>
         <br><br>
 
       </div>
     </div>
-    <div class="parallax"><img src="images/background1.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="images/canon.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
-  <div class="container">
-    <form id="paymentForm">
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email-address" required />
-      </div>
-      <div class="form-group">
-        <label for="amount">Amount</label>
-        <input type="tel" id="amount" required />
-      </div>
-      <div class="form-group">
-        <label for="first-name">First Name</label>
-        <input type="text" id="first-name" />
-      </div>
-      <div class="form-group">
-        <label for="last-name">Last Name</label>
-        <input type="text" id="last-name" />
-      </div>
-      <div class="form-submit">
-        <button type="submit" onclick="payWithPaystack()"> Pay </button>
-      </div>
-    </form>
-  </div>
 
   <div class="container">
     <div class="section">
 
-      <!--   Icon Section   -->
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
@@ -127,11 +107,12 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light black-text">A modern responsive front-end framework based on Material Design
+          </h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="images/background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="images/epson.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
   <div class="container">
@@ -163,7 +144,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="images/background3.jpg" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="images/scan.jpg" alt="Unsplashed background img 3"></div>
   </div>
 
   <footer class="page-footer teal">
@@ -199,7 +180,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-        Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        Made by <a class="brown-text text-lighten-3" href="#">Dammykeys04</a>
       </div>
     </div>
   </footer>
@@ -207,8 +188,8 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script src="../js/materialize.js"></script>
+  <script src="../js/init.js"></script>
   <script src="https://js.paystack.co/v1/inline.js"></script>
 
 </body>
