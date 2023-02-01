@@ -8,9 +8,9 @@ self.addEventListener("install", e => {
                 "./",
                 "./css/style.css",
                 "./js/init.js",
-                "./images/background1.jpg",
-                "./images/background2.jpg",
-                "./images/background3.jpg",
+                "./images/canon.jpg",
+                "./images/epson.jpg",
+                "./images/scan.jpg",
                 "./images/dammykeys04_logo.png",
                 "./images/dammykeys04.png"
             ]).then(() => self.skipWaiting());
