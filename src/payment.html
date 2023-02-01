@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#607d8b">
+    <title>Dammykeys04 | Payment</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="#">
+    <link rel="shortcut icon" href="../images/dammykeys04_logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+    <nav class="sidenav-trigger1  white" role="navigation">
+        <div class="nav-wrapper">
+            <a id="logo-container" href="#" class="brand-logo">
+                <img id="logo" src="../images/dammykeys04_logo.png" alt="Logo" />
+            </a>
+
+            <ul class="right hide-on-med-and-down">
+                <li><a href="../index.html"><i class="material-icons left">home</i> Home</a></li>
+                <li><a href="#"><i class="material-icons left">payment</i>Pay</a></li>
+                <li><a href="#"><i class="material-icons left">shopping_cart</i>Order</a></li>
+                <li><a href="#"><i class="material-icons left">reorder</i>Invoice</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="../index.html"><i class="material-icons left">home</i> Home</a></li>
+                <li><a href="#"><i class="material-icons left">payment</i>Pay</a></li>
+                <li><a href="#"><i class="material-icons left">shopping_cart</i>Order</a></li>
+                <li><a href="#"><i class="material-icons left">reorder</i>Invoice</a></li>
+            </ul>
+
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="col s12 m4"></div>
+        <div class="col s12 m4">
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email-address" required />
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="tel" id="amount" required />
+                </div>
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" />
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" />
+                </div>
+                <div class="form-group">
+                    <label for="transaction-id">Transaction ID</label>
+                    <input type="text" id="transaction-id" readonly />
+                </div>
+                <div class="form-submit">
+                    <button class="btn-large" type="submit" onclick="payWithPaystack()"> Pay </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script src="../js/init.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</body>
+
+</html>
