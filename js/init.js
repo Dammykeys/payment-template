@@ -34,7 +34,7 @@ function payWithPaystack(e) {
   let handler = PaystackPop.setup({
     key: 'pk_test_7273e0d3e51db20b949946c707d2180a7af72bda',
     email: document.getElementById("email-address").value,
-    amount: document.getElementById("amount").value * 1000,
+    amount: document.getElementById("amount").value * 100,
     ref: '' + Math.floor((Math.random() * 1000000000) + 1),
 
     // label: "Optional string that replaces customer email"
