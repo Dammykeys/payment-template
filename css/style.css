@@ -13,6 +13,13 @@
   height: 100vh;
 }
 
+.paymentBody {
+  background: url(../images/background3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
 .preloader {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
