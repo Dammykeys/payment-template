@@ -1,12 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-import { getDatabase, } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
-
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 export const firebaseConfig = {
@@ -61,10 +56,9 @@ document.getElementById('logout').addEventListener('click', (e) => {
 
 
 
-
+// Addition of input fields
 const inputField = document.getElementById('inputField');
 const addButton = document.getElementById('addButton');
-
 
 addButton.addEventListener('click', () => {
 
@@ -77,3 +71,12 @@ addButton.addEventListener('click', () => {
    const input = addInputField('<div><input class="col s2" type="text" name="title" placeholder="title"><div class="col s1"></div><input class="col s4" type="text" name="description" placeholder="description"><div class="col s1"></div><input class="col s2" type="text" name="price" placeholder="price"><div class="col s1"></div><input class="col s1" type="text" name="quantity" placeholder="quantity"></div>');
    inputField.appendChild(input);
 });
+
+var ClientName = document.getElementById('clientName').value;
+var address = document.getElementById('address').value;
+var phone = document.getElementById('phone').value;
+var email = document.getElementById('email').value;
+var title = document.getElementById('title').value;
+var description = document.getElementById('description').value;
+var price = document.getElementById('price').value;
+var quantity = document.getElementById('quantity').value;

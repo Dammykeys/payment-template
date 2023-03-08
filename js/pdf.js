@@ -4,7 +4,7 @@ function generatePDF() {
 var props = {
    outputType: jsPDFInvoiceTemplate.OutputType.Save,
    returnJsPDFDocObject: true,
-   fileName: "Invoice 2023",
+   fileName: "Invoice for 2023",
    orientationLandscape: false,
    compress: true,
    logo: {

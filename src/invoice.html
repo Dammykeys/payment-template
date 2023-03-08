@@ -42,19 +42,23 @@
    </nav>
    <div class="container center">
       <form action="POST" class="row">
-         <input type="text" name="clientName" placeholder="Client Name" required>
-         <input type="text" name="address" placeholder="address">
-         <input type="text" name="phone" placeholder="phone" required>
-         <input type="text" name="email" placeholder="email" required>
+         <input type="text" name="clientName" placeholder="Client Name" id="clientName" required>
+         <input type="text" name="address" placeholder="Address" id="address">
+         <input type="text" name="phone" placeholder="Phone" id="phone" required>
+         <input type="text" name="email" placeholder="Email" id="email" required>
          <div id="inputField">
+            <div class="bold">
+               <div class="col s2">Title</div>
+               <div class="col s4 offset-l1">Description</div>
+               <div class="col s2 offset-l1">Price</div>
+               <div class="col s1 offset-l1">Quantity</div>
+            </div>
             <div>
-               <input class="col s2" type="text" name="title" placeholder="title">
-               <div class="col s1"></div>
-               <input class="col s4" type="text" name="description" placeholder="description">
-               <div class="col s1"></div>
-               <input class="col s2" type="text" name="price" placeholder="price">
-               <div class="col s1"></div>
-               <input class="col s1" type="text" name="quantity" placeholder="quantity">
+               <input class=" col s2" type="text" name="title" placeholder="Title" id="title">
+               <input class="col s4 offset-l1" type="text" name="description" placeholder="Description"
+                  id="description">
+               <input class="col s2 offset-l1" type="text" name="price" placeholder="Price" id="price">
+               <input class="col s1 offset-l1" type="text" name="quantity" placeholder="Quantity" id="quantity">
             </div>
          </div>
 
@@ -63,7 +67,7 @@
 
    <div class="fixed-action-btn">
       <a class="btn-floating btn-large #26a69a">
-         <i class="large material-icons">mode_edit</i>
+         <i class="large material-icons pulse">mode_edit</i>
       </a>
       <ul>
          <li><a class="btn-floating yellow darken-1" id="addButton"><i class="material-icons">add</i></a></li>
