@@ -1,8 +1,8 @@
 //instal service worker
 self.addEventListener("install", e => {
     e.waitUntil(
-        //create cache called static
-        caches.open("static").then(cache => {
+        //create cache called dynamic
+        caches.open("dynamic").then(cache => {
             //upload into cache
             return cache.addAll([
                 "./",
@@ -21,7 +21,7 @@ self.addEventListener("install", e => {
 
 self.addEventListener("fetch", e => {
     e.respondWith(
-        //create cache called static
+        //create cache called dynamic
         caches.match(e.request).then(response => {
             //upload into cache
             return response || fetch(e.request);
