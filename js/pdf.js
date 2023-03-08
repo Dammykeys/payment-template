@@ -1,10 +1,19 @@
 function generatePDF() {
    var pdfObject = jsPDFInvoiceTemplate.default(props);
 }
+var ClientName = document.getElementById('clientName').value;
+var address = document.getElementById('address').value;
+var phone = document.getElementById('phone').value;
+var email = document.getElementById('email').value;
+var title = document.getElementById('title').value;
+var description = document.getElementById('description').value;
+var price = document.getElementById('price').value;
+var quantity = document.getElementById('quantity').value;
+var date = Date();
 var props = {
    outputType: jsPDFInvoiceTemplate.OutputType.Save,
    returnJsPDFDocObject: true,
-   fileName: "Invoice for 2023",
+   fileName: "Invoice for " + ClientName,
    orientationLandscape: false,
    compress: true,
    logo: {
@@ -22,22 +31,22 @@ var props = {
       address: "Shop 08, FMS Market, LASU.",
       phone: "(+234) 812 2468 628",
       email: "immanueladeniyi7@gmail.com",
-      email_1: "info@example.al",
+      email_1: "immanueladeniyi7@gmail.com",
       website: "https://dammykeys.github.io/payment-template",
    },
    contact: {
       label: "Invoice issued for:",
-      name: "Client Name",
-      address: "Albania, Tirane, Astir",
-      phone: "(+355) 812 34 56 789",
-      email: "client@website.al",
+      name: ClientName,
+      address: address,
+      phone: phone,
+      email: email,
       otherInfo: "www.website.al",
    },
    invoice: {
       label: "Invoice #: ",
       num: 19,
-      invDate: "Payment Date: 01/01/2021 18:12",
-      invGenDate: "Invoice Date: 02/02/2021 10:17",
+      invDate: date,
+      invGenDate: date,
       headerBorder: false,
       tableBodyBorder: false,
       header: [
@@ -66,12 +75,12 @@ var props = {
       ],
       table: Array.from(Array(1), (item, index) => ([
          index + 1,
-         "There are many variations ",
-         "Lorem Ipsum is simply dummy text dummy text ",
-         200.5,
-         4.5,
+         title,
+         description,
+         price,
+         quantity,
          "m2",
-         400.5
+         total
       ])),
       additionalRows: [{
          col1: 'Total:',

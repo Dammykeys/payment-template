@@ -72,6 +72,7 @@ addButton.addEventListener('click', () => {
    inputField.appendChild(input);
 });
 
+
 var ClientName = document.getElementById('clientName').value;
 var address = document.getElementById('address').value;
 var phone = document.getElementById('phone').value;
@@ -146,12 +147,12 @@ var props = {
       ],
       table: Array.from(Array(1), (item, index) => ([
          index + 1,
-         "There are many variations ",
-         "Lorem Ipsum is simply dummy text dummy text ",
-         200.5,
-         4.5,
+         title,
+         description,
+         price,
+         quantity,
          "m2",
-         400.5
+         total
       ])),
       additionalRows: [{
          col1: 'Total:',
