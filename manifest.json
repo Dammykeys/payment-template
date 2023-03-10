@@ -2,7 +2,7 @@
     "name": "Dammykeys04",
     "short_name": "Dammykeys",
     "id": "/",
-    "start_url": "index.html",
+    "start_url": "/index.html",
     "orientation": "portrait-primary",
     "description": "Payment Platform",
     "background_color": "#cfd8dc",
