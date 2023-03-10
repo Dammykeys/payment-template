@@ -13,6 +13,10 @@
   height: 100vh;
 }
 
+label {
+  Color: black;
+}
+
 .preloader {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
