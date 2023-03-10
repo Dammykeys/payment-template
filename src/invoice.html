@@ -49,18 +49,19 @@
          <div>
             <div class="col s2">Title</div>
             <div class="col s4 offset-s1">Description</div>
-            <div class="col s2 offset-s1">Price</div>
-            <div class="col s1 offset-s1">Quantity</div>
+            <div class="col s2 offset-s1" id="price" value="0">Price</div>
+            <div class="col s1 offset-s1" id="quantity" value="0">Quantity</div>
          </div>
          <div>
-            <input class=" col s2" type="text" name="title" placeholder="Title" id="title">
-            <input class="col s4 offset-s1" type="text" name="description" placeholder="Description" id="description">
-            <input class="col s2 offset-s1" type="number" name="price" placeholder="Price" id="price">
-            <input class="col s1 offset-s1" type="number" name="quantity" placeholder="Quantity" id="quantity">
+            <input class=" col s2" type="text" name="title" placeholder="Title" id="title1">
+            <input class="col s4 offset-s1" type="text" name="description" placeholder="Description" id="description1">
+            <input class="col s2 offset-s1" type="number" name="price" placeholder="Price" id="price1">
+            <input class="col s1 offset-s1" type="number" name="quantity" value="1" placeholder="Qty" id="quantity1">
          </div>
       </div>
       <div>
          <input type="submit" class="btn-large" name="submit" id="submit">
+         <button class="btn-large" id="addButton"><i class="material-icons">add</i></button>
       </div>
    </form>
 
@@ -69,7 +70,7 @@
          <i class="large material-icons pulse">mode_edit</i>
       </a>
       <ul>
-         <li><a class="btn-floating yellow darken-1" id="addButton"><i class="material-icons">add</i></a></li>
+         <li><a class="btn-floating yellow darken-1" id="addButton2"><i class="material-icons">add</i></a></li>
          <li><a class="btn-floating green" onclick="generatePDF()"><i class="material-icons">file_download</i></a></li>
          <li><a class="btn-floating blue"><i class="material-icons">print</i></a></li>
       </ul>

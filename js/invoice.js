@@ -1,5 +1,4 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
 
@@ -15,7 +14,6 @@ export const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
 
@@ -24,7 +22,6 @@ onAuthStateChanged(auth, (user) => {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       const uid = user.uid;
-      console.log(uid);
 
    } else {
       // User is signed out
@@ -50,6 +47,7 @@ document.getElementById('logout').addEventListener('click', (e) => {
          // ...
       }).catch((error) => {
          // An error happened.
+         alert("Check your Internet");
       });
 
 });
@@ -59,8 +57,11 @@ document.getElementById('logout').addEventListener('click', (e) => {
 // Addition of input fields
 const inputField = document.getElementById('inputField');
 const addButton = document.getElementById('addButton');
+var classNumber = 0
 
-addButton.addEventListener('click', () => {
+
+addButton.addEventListener('click', (e) => {
+   e.preventDefault();
 
    function addInputField(html) {
       const template = document.createElement('template');
@@ -68,122 +69,29 @@ addButton.addEventListener('click', () => {
       return template.content.firstElementChild;
    }
 
-   const input = addInputField('<div><input class="col s2" type="text" name="title" placeholder="title"><div class="col s1"></div><input class="col s4" type="text" name="description" placeholder="description"><div class="col s1"></div><input class="col s2" type="text" name="price" placeholder="price"><div class="col s1"></div><input class="col s1" type="text" name="quantity" placeholder="quantity"></div>');
-   inputField.appendChild(input);
+   const inputs = [
+      addInputField('<div><input class="col s2" id="title2" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description2" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price2" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity2" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title3" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description3" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price3" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity3" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title4" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description4" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price4" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity4" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title5" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description5" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price5" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity5" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title6" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description6" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price6" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity6" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title7" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description7" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price7" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity7" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title8" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description8" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price8" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity8" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title9" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description9" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price9" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity9" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title10" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description10" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price10" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity10" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title11" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description11" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price11" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity11" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title12" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description12" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price12" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity12" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title13" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description13" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price13" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity13" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title14" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description14" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price14" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity14" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title15" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description15" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price15" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity15" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title16" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description16" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price16" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity16" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title17" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description17" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price17" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity17" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title18" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description18" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price18" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity18" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title19" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description19" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price19" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity19" value="1" placeholder="qty"></div>'),
+      addInputField('<div><input class="col s2" id="title20" type="text" name="title" placeholder="title"><input class="col s4 offset-s1" type="text" name="description" id="description20" placeholder="description"><input class="col s2 offset-s1" type="number" name="price" id="price20" placeholder="price"><input class="col s1 offset-s1" type="number" name="quantity" id="quantity20" value="1" placeholder="qty"></div>'),
+
+   ];
+   inputField.appendChild(inputs[classNumber]);
+
+   classNumber = classNumber + 1;
 });
-
-
-// var ClientName = document.getElementById('clientName').value;
-// var address = document.getElementById('address').value;
-// var phone = document.getElementById('phone').value;
-// var email = document.getElementById('email').value;
-// var title = document.getElementById('title').value;
-// var description = document.getElementById('description').value;
-// var price = document.getElementById('price').value;
-// var quantity = document.getElementById('quantity').value;
-// var date = Date();
-// var props = {
-//    outputType: jsPDFInvoiceTemplate.OutputType.Save,
-//    returnJsPDFDocObject: true,
-//    fileName: "Invoice for " + ClientName,
-//    orientationLandscape: false,
-//    compress: true,
-//    logo: {
-//       src: "../images/dammykeys04_logo.png",
-//       type: 'PNG', //optional, when src= data:uri (nodejs case)
-//       width: 26.66, //aspect ratio = width/height
-//       height: 26.66,
-//       margin: {
-//          top: 0, //negative or positive num, from the current position
-//          left: 0 //negative or positive num, from the current position
-//       }
-//    },
-//    business: {
-//       name: "Dammykeys",
-//       address: "Shop 08, FMS Market, LASU.",
-//       phone: "(+234) 812 2468 628",
-//       email: "immanueladeniyi7@gmail.com",
-//       email_1: "immanueladeniyi7@gmail.com",
-//       website: "https://dammykeys.github.io/payment-template",
-//    },
-//    contact: {
-//       label: "Invoice issued for:",
-//       name: ClientName,
-//       address: address,
-//       phone: phone,
-//       email: email,
-//       otherInfo: "www.website.al",
-//    },
-//    invoice: {
-//       label: "Invoice #: ",
-//       num: 19,
-//       invDate: date,
-//       invGenDate: date,
-//       headerBorder: false,
-//       tableBodyBorder: false,
-//       header: [
-//          {
-//             title: "#",
-//             style: {
-//                width: 10
-//             }
-//          },
-//          {
-//             title: "Title",
-//             style: {
-//                width: 30
-//             }
-//          },
-//          {
-//             title: "Description",
-//             style: {
-//                width: 80
-//             }
-//          },
-//          { title: "Price" },
-//          { title: "Quantity" },
-//          { title: "Unit" },
-//          { title: "Total" }
-//       ],
-//       table: Array.from(Array(1), (item, index) => ([
-//          index + 1,
-//          title,
-//          description,
-//          price,
-//          quantity,
-//          "m2",
-//          "total"
-//       ])),
-//       additionalRows: [{
-//          col1: 'Total:',
-//          col2: '145,250.50',
-//          col3: 'ALL',
-//          style: {
-//             fontSize: 14 //optional, default 12
-//          }
-//       },
-//       {
-//          col1: 'VAT:',
-//          col2: '20',
-//          col3: '%',
-//          style: {
-//             fontSize: 10 //optional, default 12
-//          }
-//       },
-//       {
-//          col1: 'SubTotal:',
-//          col2: '116,199.90',
-//          col3: 'ALL',
-//          style: {
-//             fontSize: 10 //optional, default 12
-//          }
-//       }],
-//       invDescLabel: "Invoice Note",
-//       invDesc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-//    },
-//    footer: {
-//       text: "The invoice is created on a computer and is valid without the signature and stamp.",
-//    },
-//    pageEnable: true,
-//    pageLabel: "Page ",
-// };

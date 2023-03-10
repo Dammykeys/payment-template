@@ -1,23 +1,45 @@
+//TODO: hide unoccupied input fields; 
 
+var addButton = document.getElementById('addButton');
+var inputFieldNumber = 1;
 
+addButton.addEventListener('click', function iterate() {
+   inputFieldNumber = inputFieldNumber + 1;
+   console.log(inputFieldNumber);
+});
 
 const invoiceForm = document.getElementById('submit');
 invoiceForm.addEventListener('click', function generatePDF(e) {
    e.preventDefault()
 
+   var titles = [];
+   var descriptions = [];
+   var prices = [];
+   var quantities = [];
+   var idNumber = 0;
+
+   for (let i = 1; i < inputFieldNumber + 1; i++) {
+      idNumber += 1;
+      var title = "title";
+      var description = "description";
+      var price = "price";
+      var quantity = "quantity";
+      titles.push(title + idNumber);
+      descriptions.push(description + idNumber);
+      prices.push(price + idNumber);
+      quantities.push(quantity + idNumber);
+   }
+
+
    var clientName = document.getElementById("clientName").value;
-   var address = document.getElementById('address').value.toString();
-   var phone = document.getElementById('phone').value.toString();
-   var email = document.getElementById('email').value.toString();
-   var title = document.getElementById('title').value.toString();
-   var description = document.getElementById('description').value.toString();
-   var price = document.getElementById('price').value.toString();
-   var quantity = document.getElementById('quantity').value.toString();
+   var address = document.getElementById('address').value;
+   var phone = document.getElementById('phone').value;
+   var email = document.getElementById('email').value;
    var date = new Date();
    var year = date.getFullYear();
    var month = date.getMonth() + 1;
    var day = date.getDate();
-   var newDate = day + ":" + month + ":" + year;
+   var newDate = day + "/" + month + "/" + year;
 
 
 
@@ -56,8 +78,8 @@ invoiceForm.addEventListener('click', function generatePDF(e) {
       invoice: {
          label: "Invoice #: ",
          num: 19,
-         invDate: newDate,
-         invGenDate: newDate,
+         invDate: "Invoice Date: " + newDate,
+         invGenDate: "Invoice Gen. Date: " + newDate,
          headerBorder: false,
          tableBodyBorder: false,
          header: [
@@ -84,14 +106,14 @@ invoiceForm.addEventListener('click', function generatePDF(e) {
             { title: "Unit" },
             { title: "Total" }
          ],
-         table: Array.from(Array(1), (item, index) => ([
+         table: Array.from(Array(inputFieldNumber), (item, index) => ([
             index + 1,
-            title,
-            description,
-            price,
-            quantity,
-            price * quantity,
-            "total"
+            document.getElementById(titles[index]).value,
+            document.getElementById(descriptions[index]).value,
+            document.getElementById(prices[index]).value.replace(/,/g, ''),
+            document.getElementById(quantities[index]).value,
+            document.getElementById(prices[index]).value.replace(/,/g, '') * document.getElementById(quantities[index]).value,
+            parseFloat(document.getElementById(prices[index]).value.replace(/,/g, '') * document.getElementById(quantities[index]).value)
          ])),
          additionalRows: [{
             col1: 'Total:',
@@ -127,12 +149,6 @@ invoiceForm.addEventListener('click', function generatePDF(e) {
       pageLabel: "Page ",
    };
 
-   // var pdfObject = jsPDFInvoiceTemplate.default(props);
-   console.log(price * quantity);
-   console.log(clientName);
-   console.log(address);
-   console.log(phone);
-   console.log(price);
-   console.log(quantity);
-   console.log(day + "/" + month + "/" + year)
+
+   var pdfObject = jsPDFInvoiceTemplate.default(props);
 });
