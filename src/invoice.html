@@ -40,7 +40,7 @@
          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
    </nav>
-   <form class="container center row" id="invoiceForm">
+   <form class="container center row" id="invoiceForm" action="#">
       <input type="text" name="clientName" placeholder="Client Name" id="clientName" required>
       <input type="text" name="address" placeholder="Address" id="address">
       <input type="number" name="phone" placeholder="Phone" id="phone" required>
@@ -59,10 +59,10 @@
             <input class="col s1 offset-s1" type="number" name="quantity" value="1" placeholder="Qty" id="quantity1">
          </div>
       </div>
-      <div>
+      <!-- <div>
          <input type="submit" class="btn-large" name="submit" id="submit">
          <button class="btn-large" id="addButton"><i class="material-icons">add</i></button>
-      </div>
+      </div> -->
    </form>
 
    <div class="fixed-action-btn">
@@ -70,8 +70,8 @@
          <i class="large material-icons">mode_edit</i>
       </a>
       <ul>
-         <li><a class="btn-floating yellow darken-1" id="addButton2"><i class="material-icons">add</i></a></li>
-         <li><a class="btn-floating green" onclick="generatePDF()"><i class="material-icons">file_download</i></a></li>
+         <li><a class="btn-floating yellow darken-1" id="addButton"><i class="material-icons">add</i></a></li>
+         <li><a class="btn-floating green" id="submit"><i class="material-icons">file_download</i></a></li>
          <li><a class="btn-floating blue"><i class="material-icons">print</i></a></li>
       </ul>
    </div>

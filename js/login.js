@@ -62,3 +62,14 @@ function exit() {
 function eject() {
    window.location.replace('../src/login.html');
 };
+
+
+//Fetch Data from Firebase
+// firebase.initializeApp(firebaseConfig);
+// var firebaseDB = firebase.database().ref("users");
+// firebaseDB.once('value', (snapshot) => {
+//    var data = snapshot.val();
+//    for (let i in data) {
+//       console, log(data[i]);
+//    }
+// })

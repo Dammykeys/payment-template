@@ -1,23 +1,33 @@
+const staticCacheName = 'site-static';
+const assets = [
+    "/",
+    "/index.html",
+    "/js/app.js",
+    "/js/scripts.js",
+    "/js/materialize.css",
+    "/css/style.css",
+    "/css/materialize.css",
+    "https://fonts.googleapis.com/icon?family=Material+Icons",
+    "https://code.jquery.com/jquery-2.1.1.min.js",
+    "/images/canon.jpg",
+    "/images/epson.jpg",
+    "/images/scan.jpg",
+    "/images/dammykeys04_logo.png",
+    "/images/dammykeys04.png",
+];
+
 //instal service worker
-self.addEventListener("install", e => {
-    e.waitUntil(
+self.addEventListener("install", evt => {
+    evt.waitUntil(
         //create cache called dynamic
-        caches.open("dynamic").then(cache => {
+        caches.open(staticCacheName).then(cache => {
             //upload into cache
-            return cache.addAll([
-                "./",
-                "./css/style.css",
-                "./js/init.js",
-                "./images/canon.jpg",
-                "./images/epson.jpg",
-                "./images/scan.jpg",
-                "./images/dammykeys04_logo.png",
-                "./images/dammykeys04.png",
-                "./src/receipt.html"
-            ]).then(() => self.skipWaiting());
+            cache.addAll(assets);
+            // .then(() => self.skipWaiting());
         })
     );
-})
+    console.log('wetin be this');
+});
 
 self.addEventListener("fetch", e => {
     e.respondWith(
@@ -27,4 +37,4 @@ self.addEventListener("fetch", e => {
             return response || fetch(e.request);
         })
     );
-})
+});
