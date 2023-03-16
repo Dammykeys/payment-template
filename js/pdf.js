@@ -9,7 +9,6 @@ addButton.addEventListener('click', (e) => {
    e.preventDefault();
 
    inputFieldNumber = inputFieldNumber + 1;
-   console.log(inputFieldNumber);
 
    function addInputField(html) {
       const template = document.createElement('template');

@@ -38,7 +38,7 @@ function eject() {
    window.location.replace('../src/login.html');
 };
 
-document.getElementById('logout').addEventListener('click', (e) => {
+document.getElementsByClassName('logout').addEventListener('click', (e) => {
    e.preventDefault();
 
    signOut(auth)
