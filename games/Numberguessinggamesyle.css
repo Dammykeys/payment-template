@@ -27,15 +27,15 @@ h1:hover {
 }
 
 #info {
-  border: 1px solid red;
+  border: 1px solid #cccccc;
   font-weight: bold;
   border-radius: 4px;
-  padding: 30px 0px 30px 10px;
+  padding: 30px 0px;
   box-shadow: 20px 20px 100px 1px #00ffc4;
   font-style: italic;
 }
 
-.form {
+form {
   margin-top: 30px;
 }
 
@@ -45,10 +45,6 @@ input[type=number] {
   background-color: #3fcfb1;
   border-radius: 4px;
   color: blue;
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
 }
 
 input[type=number]:focus {

@@ -1,27 +1,27 @@
 
-      // Your JavaScript goes here
+// Your JavaScript goes here
 
-      var randomNumber = Math.floor(Math.random() * 100) + 1;
+var randomNumber = Math.floor(Math.random() * 100) + 1;
 
-      var guesses = document.querySelector('.guesses');
-      var lastResult = document.querySelector('.lastResult');
-      var lowOrHi = document.querySelector('.lowOrHi');
+var guesses = document.querySelector('.guesses');
+var lastResult = document.querySelector('.lastResult');
+var lowOrHi = document.querySelector('.lowOrHi');
 
-      var guessSubmit = document.querySelector('.guessSubmit');
-      var guessField = document.querySelector('.guessField');
+var guessSubmit = document.querySelector('.guessSubmit');
+var guessField = document.querySelector('.guessField');
 
-      var reset = document.querySelector('.gameReset');
-      var guessCount = 1;
-      var resetButton;
-      var progress;
+var reset = document.querySelector('.gameReset');
+var guessCount = 1;
+var resetButton;
+var progress;
 
-      function checkGuess() {
+function checkGuess() {
   var userGuess = Number(guessField.value);
   if (guessCount === 1) {
     guesses.textContent = 'Previous guesses: ';
   }
   guesses.textContent += userGuess + ' ';
-       progress = guesses.textContent;
+  progress = guesses.textContent;
   if (userGuess === randomNumber) {
     if (guessCount <= 3) {
       lastResult.textContent = 'Congratulations! You got it right!';
@@ -59,9 +59,9 @@
   } else {
     lastResult.textContent = 'Wrong!';
     lastResult.style.backgroundColor = 'red';
-    if(userGuess < randomNumber) {
+    if (userGuess < randomNumber) {
       lowOrHi.textContent = 'Last guess was too low!';
-    } else if(userGuess > randomNumber) {
+    } else if (userGuess > randomNumber) {
       lowOrHi.textContent = 'Last guess was too high!';
     }
   }
@@ -70,9 +70,9 @@
   guessField.value = '';
   guessField.focus();
 }
-  guessSubmit.addEventListener('click', checkGuess);
+guessSubmit.addEventListener('click', checkGuess);
 
-     function setGameOver() {
+function setGameOver() {
   guessField.disabled = true;
   guessSubmit.disabled = true;
   resetButton = document.createElement('button');
@@ -85,7 +85,7 @@ function resetGame() {
   guessCount = 1;
 
   var resetParas = document.querySelectorAll('.resultParas p');
-  for (var i = 0 ; i < resetParas.length ; i++) {
+  for (var i = 0; i < resetParas.length; i++) {
     resetParas[i].textContent = '';
   }
 
@@ -107,3 +107,8 @@ function gameReset(event) {
   resetGame();
 }
 reset.addEventListener('click', gameReset);
+
+const form = document.getElementById('form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+})
