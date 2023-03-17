@@ -1,4 +1,3 @@
-
 // Your JavaScript goes here
 
 var randomNumber = Math.floor(Math.random() * 100) + 1;
@@ -58,7 +57,7 @@ function checkGuess() {
     setGameOver();
   } else {
     lastResult.textContent = 'Wrong!';
-    lastResult.style.backgroundColor = 'red';
+    lastResult.style.backgroundColor = '#ff5252';
     if (userGuess < randomNumber) {
       lowOrHi.textContent = 'Last guess was too low!';
     } else if (userGuess > randomNumber) {
@@ -75,10 +74,7 @@ guessSubmit.addEventListener('click', checkGuess);
 function setGameOver() {
   guessField.disabled = true;
   guessSubmit.disabled = true;
-  resetButton = document.createElement('button');
-  resetButton.textContent = 'Start new game';
-  document.body.appendChild(resetButton);
-  resetButton.addEventListener('click', resetGame);
+  reset.addEventListener('click', resetGame);
 }
 
 function resetGame() {
@@ -89,21 +85,21 @@ function resetGame() {
     resetParas[i].textContent = '';
   }
 
-  resetButton.parentNode.removeChild(resetButton);
+  reset.textContent = 'Reset';
 
   guessField.disabled = false;
   guessSubmit.disabled = false;
   guessField.value = '';
   guessField.focus();
 
-  lastResult.style.backgroundColor = '#95e6d8';
+  lastResult.style.backgroundColor = '#00000000';
 
   randomNumber = Math.floor(Math.random() * 100) + 1;
 }
 function gameReset(event) {
   event.preventDefault();
   guessField.focus();
-  lastResult.style.backgroundColor = '#95e6d8';
+  lastResult.style.backgroundColor = '#00000000';
   resetGame();
 }
 reset.addEventListener('click', gameReset);

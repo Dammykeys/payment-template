@@ -1,38 +1,91 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:root {
+  --clr-1: #00ffc4;
+  --clr-2: #5ed0c4;
+  --clr-3: #22958a;
+}
+
 html {
   font-family: condensed;
   font-stretch: extra-expanded;
 }
 
 body {
-  margin: 0 auto;
-  background-image: url("wallpaper.png");
-  background-repeat: no-repeat;
+  background-color: #cfd8dc;
   background-size: 100% 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1 {
+h3 {
   letter-spacing: 2px;
-  text-shadow: 10px 10px 1.0px 2px blue;
-  text-decoration-color: initial;
+  /* text-shadow: 10px 10px 1.0px 2px blue; */
+  /* text-decoration-color: initial; */
   text-align: center;
+  font-weight: bold;
 }
 
-h1:hover {
-  letter-spacing: 5px;
+h3:hover {
+  letter-spacing: 4px;
   -webkit-transition: 0.7s ease-in-out;
   -moz-transition: 0.7s ease-in-out;
   -o-transition: 0.7s ease-in-out;
   transition: 0.7s ease-in-out;
 }
 
-#info {
-  border: 1px solid #cccccc;
+#info,
+.container {
+  /* border: 1px solid #cccccc; */
+  background-color: rgba(0, 0, 0, 0.1);
   font-weight: bold;
-  border-radius: 4px;
+  border-radius: 0.5rem;
   padding: 30px 0px;
-  box-shadow: 20px 20px 100px 1px #00ffc4;
+  /* box-shadow: 20px 20px 100px 1px #00ffc4; */
   font-style: italic;
+
+  position: relative;
+}
+
+.container {
+  font-style: normal;
+  background-color: #00000000;
+}
+
+#info::before,
+#info::after {
+  animation: loading 5s ease-in-out infinite;
+
+}
+
+#info::before,
+#info::after,
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 60vh;
+  inset: 3rem;
+  z-index: -1;
+  border: 10px solid #26a69a55;
+  border-radius: inherit;
+}
+
+.container::before,
+.container::after {
+  inset: -1rem;
+  border: 10px solid #26a69a33;
+  border-radius: inherit;
+  animation: turning 5s linear infinite;
+}
+
+#info::after,
+.container::after {
+  filter: blur(2.5rem);
 }
 
 form {
@@ -41,31 +94,8 @@ form {
 
 input[type=number] {
   width: 11em;
-  border: 1px solid #95e6d8;
-  background-color: #3fcfb1;
-  border-radius: 4px;
+  font-weight: bold;
   color: blue;
-}
-
-input[type=number]:focus {
-  width: 15em;
-  box-shadow: 10px 10px 50px 1px blue;
-}
-
-input[type=submit] {
-  border-radius: 4px 230px;
-  background-color: #3fcfb1;
-  font-weight: bold;
-  color: #2a7584;
-  cursor: pointer;
-}
-
-input[type=reset] {
-  border-radius: 4px 230px;
-  background-color: #3fcfb1;
-  font-weight: bold;
-  color: #2a7584;
-  cursor: pointer;
 }
 
 label {
@@ -80,10 +110,6 @@ label {
   margin-top: 30px;
 }
 
-.guesses {
-  font-weight: bold;
-}
-
 .lastResult {
   color: white;
   padding: 35px;
@@ -94,4 +120,24 @@ label {
 
 .lowOrHi {
   text-align: center;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(1turn);
+  }
+
+  to {
+    transform: rotate(0turn);
+  }
+}
+
+@keyframes turning {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
 }

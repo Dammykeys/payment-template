@@ -42,17 +42,18 @@
     </div>
   </nav>
   <section class="container">
-    <h1>Number guessing game</h1>
+    <h3>Number guessing game</h3>
 
     <p id="info" class="center">We have selected a random number between 1 and 100. See if you can guess it in 10 turns
-      or fewer. We'll
-      tell you if your guess was too high or too low.</p>
+      or fewer. We'll tell you if your guess was too high or too low.
+    </p>
 
-    <form action="#" id="form">
+    <form action="#" id="form" class="row">
       <label for="guessField">Enter a guess: </label>
       <input type="number" id="guessField" class="guessField" placeholder="Enter a number value">
-      <input type="submit" value="Submit guess" class="guessSubmit">
-      <input type="reset" value="Reset game" class="gameReset">
+      <br>
+      <input type="submit" value="Submit guess" class="guessSubmit btn-large col s2 offset-s1">
+      <input type="reset" value="Reset game" class="gameReset btn-large col s2 offset-s6">
     </form>
     <div class="resultParas">
       <p class="guesses"></p>
