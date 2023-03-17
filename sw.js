@@ -1,10 +1,10 @@
 const staticCacheName = 'site-static';
 const assets = [
-    '/',
-    '/index.html',
-    '/js/app.js',
-    '/js/script.js',
-    '/css/materialize.css',
+    './',
+    './index.html',
+    './js/app.js',
+    './js/script.js',
+    './css/materialize.css',
     '/css/style.css',
     '/js/materialize.js',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
