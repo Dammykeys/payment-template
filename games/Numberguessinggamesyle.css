@@ -141,3 +141,14 @@ label {
     transform: rotate(1turn);
   }
 }
+
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+
+  #info::before,
+  #info::after,
+  .container::before,
+  .container::after {
+    width: 70%;
+    height: 40vh;
+  }
+}
