@@ -27,7 +27,7 @@ function checkGuess() {
   if (userGuess === randomNumber) {
     if (guessCount <= 3) {
       lastResult.textContent = 'Congratulations! You got it right!';
-      lastResult.style.backgroundColor = 'green';
+      results.style.backgroundColor = 'green';
       progress = document.createElement('p');
       progress.textContent = 'Very good!';
       progress.style.color = 'green';
@@ -36,7 +36,7 @@ function checkGuess() {
       setGameOver();
     } else if ((guessCount <= 10) && (guessCount > 6)) {
       lastResult.textContent = 'Congratulations! You got it right!';
-      lastResult.style.backgroundColor = 'green';
+      results.style.backgroundColor = 'green';
       progress = document.createElement('p');
       progress.textContent = 'Poor!';
       progress.style.color = 'red';
@@ -45,7 +45,7 @@ function checkGuess() {
       setGameOver();
     } else {
       lastResult.textContent = 'Congratulations! You got it right!';
-      lastResult.style.backgroundColor = 'green';
+      results.style.backgroundColor = 'green';
       progress = document.createElement('p');
       progress.textContent = 'Fair!';
       progress.style.color = 'rgb(255, 187, 0)';
