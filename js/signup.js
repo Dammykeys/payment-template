@@ -42,12 +42,18 @@ document.getElementById('signup').addEventListener('submit', (e) => {
             email: email,
          });
          alert('user created');
+         console.log(user.uid);
+         exit();
       })
       .catch((error) => {
          const errorCode = error.code;
          const errorMessage = error.message;
          // ..
-         alert(errorMessage);
+         alert("Email already in use.");
       });
 
 });
+
+function exit() {
+   window.location.replace('../src/login.html');
+};

@@ -40,7 +40,6 @@ document.getElementById('login').addEventListener('submit', (e) => {
          // ...
          update(ref(database, 'users/' + user.uid), {
             last_login: dt,
-            logged_in: true
          });
          exit();
       })
@@ -59,9 +58,6 @@ function exit() {
    window.location.replace('../src/invoice.html');
 };
 
-function eject() {
-   window.location.replace('../src/login.html');
-};
 
 
 //Fetch Data from Firebase

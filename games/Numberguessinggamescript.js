@@ -2,6 +2,7 @@
 
 var randomNumber = Math.floor(Math.random() * 100) + 1;
 
+const results = document.querySelector('.results');
 var guesses = document.querySelector('.guesses');
 var lastResult = document.querySelector('.lastResult');
 var lowOrHi = document.querySelector('.lowOrHi');
@@ -13,6 +14,8 @@ var reset = document.querySelector('.gameReset');
 var guessCount = 1;
 var resetButton;
 var progress;
+
+guessField.focus();
 
 function checkGuess() {
   var userGuess = Number(guessField.value);
@@ -53,11 +56,11 @@ function checkGuess() {
 
   } else if (guessCount === 10) {
     lastResult.textContent = '!!!GAME OVER!!!';
-    lastResult.style.backgroundColor = 'red';
+    results.style.backgroundColor = 'red';
     setGameOver();
   } else {
     lastResult.textContent = 'Wrong!';
-    lastResult.style.backgroundColor = '#ff5252';
+    results.style.backgroundColor = '#ff5252';
     if (userGuess < randomNumber) {
       lowOrHi.textContent = 'Last guess was too low!';
     } else if (userGuess > randomNumber) {
@@ -92,14 +95,13 @@ function resetGame() {
   guessField.value = '';
   guessField.focus();
 
-  lastResult.style.backgroundColor = '#00000000';
+  results.style.backgroundColor = '#00000000';
 
   randomNumber = Math.floor(Math.random() * 100) + 1;
 }
 function gameReset(event) {
   event.preventDefault();
   guessField.focus();
-  lastResult.style.backgroundColor = '#00000000';
   resetGame();
 }
 reset.addEventListener('click', gameReset);

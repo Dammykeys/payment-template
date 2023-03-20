@@ -35,3 +35,9 @@ window.addEventListener("load", () => {
         document.body.removeChild(preloader);
     })
 });
+
+//Modal
+
+$(document).ready(function () {
+    $('.modal').modal();
+});

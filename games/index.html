@@ -41,11 +41,28 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-  <section class="container">
+  <section class="container containers">
     <h3>Number guessing game</h3>
 
     <p id="info" class="center">We have selected a random number between 1 and 100. See if you can guess it in 10 turns
       or fewer. We'll tell you if your guess was too high or too low.
+      <!-- Modal Trigger -->
+      <span class="waves-effect waves-light modal-trigger" href="#modal1"><i
+          class="material-icons">info_outline</i></span>
+
+      <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Additional info</h4>
+        <p>If your first 3 guesses are correct, you'll get a <span class="green-text">good</span> grade.</p>
+        <p>If correct in the next 4 guesses, you'll get a <span class="yellow-text">fair</span> grade.</p>
+        <p>And of course, the last 3 guesses attracts a <span class="red-text">poor</span> grade.</p>
+        <p>Let's test your guessing skill.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Ok</a>
+      </div>
+    </div>
     </p>
 
     <form action="#" id="form" class="row">
@@ -57,8 +74,10 @@
     </form>
     <div class="resultParas">
       <p class="guesses"></p>
-      <p class="lastResult"></p>
-      <p class="lowOrHi"></p>
+      <div class="container results">
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+      </div>
     </div>
     <script src="Numberguessinggamescript.js"></script>
   </section>
