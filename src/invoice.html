@@ -27,7 +27,7 @@
             <!-- <li><a href="../index.html"><i class="material-icons left">home</i> Home</a></li>
             <li><a href="payment.html"><i class="material-icons left">payment</i>Pay</a></li>
             <li><a href="#"><i class="material-icons left">reorder</i>Invoice</a></li> -->
-            <li><a href="https://dashboard.paystack.com/#/login"><i class="material-icons left">reorder</i>Paystack</a>
+            <li><a href="paystack.html"><i class="material-icons left">reorder</i>Paystack</a>
             </li>
             <li class="logout"><a href="login.html"><i class="material-icons left">person</i>Logout</a></li>
          </ul>
@@ -36,7 +36,7 @@
             <!-- <li><a href="../index.html"><i class="material-icons left">home</i> Home</a></li>
             <li><a href="payment.html"><i class="material-icons left">payment</i>Pay</a></li>
             <li><a href="invoice.html"><i class="material-icons left">reorder</i>Invoice</a></li> -->
-            <li><a href="https://dashboard.paystack.com/#/login"><i class="material-icons left">reorder</i>Paystack</a>
+            <li><a href="paystack.html"><i class="material-icons left">reorder</i>Paystack</a>
             </li>
             <li class="logout"><a href="login.html"><i class="material-icons left">person</i>Logout</a></li>
          </ul>
@@ -45,6 +45,7 @@
       </div>
    </nav>
    <form class="container center row" id="invoiceForm" action="#">
+      <h1>Generate Invoice</h1>
       <input type="text" name="clientName" placeholder="Client Name" id="clientName" required>
       <input type="text" name="address" placeholder="Address" id="address">
       <input type="number" name="phone" placeholder="Phone" id="phone" required>
@@ -56,7 +57,7 @@
             <div class="col s2 offset-s1" id="price" value="0">Price</div>
             <div class="col s1 offset-s1" id="quantity" value="0">Quantity</div>
          </div>
-         <div>
+         <div id="div1">
             <input class=" col s2" type="text" name="title" placeholder="Title" id="title1">
             <input class="col s4 offset-s1" type="text" name="description" placeholder="Description" id="description1">
             <input class="col s2 offset-s1" type="number" name="price" placeholder="Price" id="price1">
@@ -75,6 +76,7 @@
       </a>
       <ul>
          <li><a class="btn-floating yellow darken-1" id="addButton"><i class="material-icons">add</i></a></li>
+         <li><a class="btn-floating red darken-1" id="deleteButton"><i class="material-icons">delete</i></a></li>
          <li><a class="btn-floating green" id="submit"><i class="material-icons">file_download</i></a></li>
          <li><a class="btn-floating blue"><i class="material-icons">print</i></a></li>
       </ul>
