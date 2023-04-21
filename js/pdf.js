@@ -67,19 +67,29 @@ invoiceForm.addEventListener('click', function generatePDF(e) {
    var address = document.getElementById('address').value;
    var phone = document.getElementById('phone').value;
    var email = document.getElementById('email').value;
+
    var date = new Date();
    var year = date.getFullYear();
    var month = date.getMonth() + 1;
    var day = date.getDate();
-   var time = date.getTime();
-   var newDate = day + "/" + month + "/" + year + ' ' + time;
+   var hour = date.getHours();
+   var minute = date.getMinutes();
+   var seconds = date.getSeconds();
+   var newDate = day + "/" + month + "/" + year + ' ' + hour + ":" + minute + ":" + seconds;
 
-   console.log(newIndex);
+   var total = 0;
+   var count = prices.length;
+   console.log(count);
+   for (let i = 0; i < inputFieldNumber; i++) {
+      total = total + (document.getElementById(prices[count - 1]).value.replace(/,/g, '') * document.getElementById(quantities[count - 1]).value);
+      console.log(total);
+      count--;
+   }
 
-   console.log(titles);
+   console.log(total);
 
    var props = {
-      outputType: jsPDFInvoiceTemplate.OutputType.Save,
+      outputType: jsPDFInvoiceTemplate.OutputType.save,
       returnJsPDFDocObject: true,
       fileName: "Invoice for " + clientName,
       orientationLandscape: false,
@@ -138,7 +148,7 @@ invoiceForm.addEventListener('click', function generatePDF(e) {
             },
             { title: "Price" },
             { title: "Quantity" },
-            { title: "Unit" },
+            // { title: "Unit" },
             { title: "Total" }
          ],
          table: Array.from(Array(classNumber - 1), (item, index) => ([
@@ -147,20 +157,20 @@ invoiceForm.addEventListener('click', function generatePDF(e) {
             document.getElementById(descriptions[index]).value.toUpperCase(),
             document.getElementById(prices[index]).value.replace(/,/g, ''),
             document.getElementById(quantities[index]).value,
-            document.getElementById(prices[index]).value.replace(/,/g, '') * document.getElementById(quantities[index]).value,
+            // document.getElementById(prices[index]).value.replace(/,/g, '') * document.getElementById(quantities[index]).value,
             parseFloat(document.getElementById(prices[index]).value.replace(/,/g, '') * document.getElementById(quantities[index]).value)
          ])),
          additionalRows: [{
             col1: 'Total:',
-            col2: '145,250.50',
-            col3: 'ALL',
+            col2: total.toString(),
+            col3: 'NGN',
             style: {
                fontSize: 14 //optional, default 12
             }
          },
          {
             col1: 'VAT:',
-            col2: '20',
+            col2: '0',
             col3: '%',
             style: {
                fontSize: 10 //optional, default 12
@@ -168,8 +178,8 @@ invoiceForm.addEventListener('click', function generatePDF(e) {
          },
          {
             col1: 'SubTotal:',
-            col2: '116,199.90',
-            col3: 'ALL',
+            col2: total.toString(),
+            col3: 'NGN',
             style: {
                fontSize: 10 //optional, default 12
             }
