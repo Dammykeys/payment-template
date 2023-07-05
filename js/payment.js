@@ -1,9 +1,24 @@
 //paystack payment
 const paymentForm = document.getElementById('paymentForm');
+var amountField = document.getElementById('amount');
+var newAmount;
+
+amountField.onkeyup = function () {
+   var removeChar = this.value.replace(/[^0-9\.]/g, '');
+   var removeDot = removeChar.replace(/\./g, '');
+
+   var formated = removeDot.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+   this.value = formated;
+   newAmount = amountField.value.replace(/\,/g, '');
+}
+
+
+
 paymentForm.addEventListener("submit", payWithPaystack, false);
 function payWithPaystack(e) {
    e.preventDefault();
-   var price = Number(document.getElementById("amount").value);
+
+   var price = Number(newAmount);
    if (price > 5000 && price < 50000 || price == 50000) {
       var VATPrice = price + 25;
    } else if (price > 50000) {
@@ -13,14 +28,13 @@ function payWithPaystack(e) {
    } else {
       var VATPrice = price + price * 0.015;
    }
-   console.log(price);
-   console.log(VATPrice);
+
 
    let handler = PaystackPop.setup({
       key: 'pk_test_7273e0d3e51db20b949946c707d2180a7af72bda',
       email: document.getElementById("email-address").value,
       amount: Math.round(VATPrice) * 100,
-      ref: '' + Math.floor((Math.random() * 1000000000) + 1),
+      // ref: '' + Math.floor((Math.random() * 1000000000) + 1),
 
       // label: "Optional string that replaces customer email"
       onClose: function () {
@@ -29,7 +43,12 @@ function payWithPaystack(e) {
       },
       callback: function (response) {
          let message = 'Payment complete! Reference: ' + response.reference;
-         alert(message);
+
+         let alarm = () => {
+            setTimeout(alert, 10000);
+            console.log(message);
+         }
+         // alert(message);
          // window.location.replace('../src/payment.html');
       }
    });
@@ -38,10 +57,10 @@ function payWithPaystack(e) {
 
 export { payWithPaystack };
 
-document.getElementById("#modal").addEventListener('submit', e => {
-   if (payWithPaystack) {
+// document.getElementById("#modal").addEventListener('submit', e => {
+//    if (payWithPaystack) {
 
-   }
-})
+//    }
+// })
 
 // .replace(/,/g, '')   => to remove ,
