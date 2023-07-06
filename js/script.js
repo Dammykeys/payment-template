@@ -6,6 +6,7 @@
     }); // end of document ready
 })(jQuery); // end of jQuery name space
 
+
 //Floating action button
 $(document).ready(function () {
     $('.fixed-action-btn').floatingActionButton();
@@ -36,8 +37,14 @@ window.addEventListener("load", () => {
     })
 });
 
-//Modal
 
+//Modal
 $(document).ready(function () {
     $('.modal').modal();
+});
+
+
+//Collapsible list
+$(document).ready(function () {
+    $('.collapsible').collapsible();
 });
