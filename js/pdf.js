@@ -59,6 +59,9 @@ invoiceForm.addEventListener('click', function generatePDF(e) {
          quantities.splice(inputFieldNumber - 1);
          newIndex = newIndex - 1;
          classNumber--;
+         alert("Can't download PDF, Please fill the required fields.");
+      } else {
+         alert("Are you sure you want to download?");
       };
    };
 
@@ -185,7 +188,7 @@ invoiceForm.addEventListener('click', function generatePDF(e) {
             }
          }],
          invDescLabel: "Invoice Note",
-         invDesc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+         invDesc: "If you have any questions or need assistance with the new invoice format, feel free to contact our billing department at immanueladeniyi@gmail.com. We are committed to providing you with exceptional service and ensuring a seamless transition during this period. Thank you for your continued support and cooperation. We value your business and look forward to serving you with even greater efficiency.",
       },
       footer: {
          text: "The invoice is created on a computer and is valid without the signature and stamp.",
