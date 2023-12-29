@@ -7,13 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#607d8b">
     <title>Dammykeys04 | Login</title>
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="../manifest.json">
     <link rel="apple-touch-icon" href="#">
     <link rel="shortcut icon" href="../images/dammykeys04_logo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <script src="../js/script.js"></script>
 </head>
 
 <body class="loginBody">
@@ -44,31 +43,30 @@
 
     <div class="row">
         <div class="col s12 m4 offset-m4 ">
-            <form action="#" class="card">
+            <form action="#" class="card" id="login">
                 <h2 class="card-action white-text" style="background-color: #26a69a;">Admin Login</h2>
                 <div class="card-content">
                     <div class="form-field input-field">
                         <i class="material-icons prefix">email</i>
                         <label for="email">Email</label>
-                        <input type="email" id="email" class="validate">
+                        <input type="email" id="email" class="validate white-text" name="email">
                     </div>
                 </div>
                 <div class="card-content">
                     <div class="form-field input-field">
                         <i class="material-icons prefix">lock</i>
                         <label for="password">Password</label>
-                        <input type="password" id="password" class="validate">
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div class="form-field input-field">
-                        <input type="checkbox" id="remem">
-                        <span for="remem">Remember me</span>
+                        <input type="password" id="password" class="validate white-text" name="password">
                     </div>
                 </div>
                 <div class="card-content">
                     <div class="form-field center-align input-field">
-                        <button class="btn-large">Submit</button>
+                        <button class="btn-large" type="submit">Login</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="form-field center-align input-field white-text">You don't have an account?<br>
+                        <a href="signup.html"><button class="btn-large" type="button">Sign Up</button></a>
                     </div>
                 </div>
             </form>
@@ -77,9 +75,10 @@
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../js/script.js"></script>
     <script src="../js/materialize.js"></script>
-    <script src="../js/init.js"></script>
-    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="../js/login.js" type="module"></script>
+
 </body>
 
 </html>

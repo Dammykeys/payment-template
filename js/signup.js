@@ -22,15 +22,18 @@ export const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-const auth = getAuth();
+const database = getDatabase();
+const auth = getAuth(app);
 
 
 
 document.getElementById('signup').addEventListener('submit', (e) => {
    e.preventDefault();
-   var email = document.getElementById('email').value;
-   var password = document.getElementById('password').value;
+   let email = document.getElementById('email').value;
+   let password = document.getElementById('password').value;
+   let firstName = document.getElementById('firstName').value;
+   let lastName = document.getElementById('lastName').value;
+
 
 
    createUserWithEmailAndPassword(auth, email, password)
@@ -38,10 +41,12 @@ document.getElementById('signup').addEventListener('submit', (e) => {
          // Signed in
          const user = userCredential.user;
          // ...
-         set(ref(database, 'users/' + user.uid), {
-            email: email,
+         set(ref(database, 'admins/' + user.uid), {
+            Email: email,
+            FirstName: firstName,
+            LastName: lastName
          });
-         alert('user created');
+         alert('User created');
       })
       .catch((error) => {
          const errorCode = error.code;
