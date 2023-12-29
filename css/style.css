@@ -7,17 +7,18 @@
  */
 
 .loginBody {
-  background: url(../images/background1.jpg);
+  background: url(../images/epson.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
 }
 
-.paymentBody {
-  background: url(../images/background3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+.iframe-section {
+  height: 89vh;
+}
+
+label {
+  Color: black;
 }
 
 .preloader {
@@ -59,7 +60,7 @@
 }
 
 .card {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 nav ul a,

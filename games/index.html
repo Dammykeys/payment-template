@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#607d8b">
+  <title>Dammykeys04 | Number Guessing Game</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="#">
+  <link rel="shortcut icon" href="../images/dammykeys04_logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" media="all">
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection,print" />
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection,print" />
+  <link href="Numberguessinggamesyle.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="preloader"></div>
+  <nav class="sidenav-trigger1  white" role="navigation">
+    <div class="nav-wrapper">
+      <a href="../index.html" id="logo-container" href="#" class="brand-logo">
+        <img id="logo" src="../images/dammykeys04_logo.png" alt="Logo" />
+      </a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="../index.html"><i class="material-icons left">home</i> Home</a></li>
+        <li><a href="../src/payment.html"><i class="material-icons left">payment</i>Pay</a></li>
+        <li><a href="#"><i class="material-icons left">reorder</i>Invoice</a></li>
+        <li><a href="../src/login.html"><i class="material-icons left">person</i>Login</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="../index.html"><i class="material-icons left">home</i> Home</a></li>
+        <li><a href="../src/payment.html"><i class="material-icons left">payment</i>Pay</a></li>
+        <li><a href="index.html"><i class="material-icons left">reorder</i>Invoice</a></li>
+        <li><a href="../src/login.html"><i class="material-icons left">person</i>Login</a></li>
+      </ul>
+
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <section class="container containers">
+    <h3>Number guessing game</h3>
+
+    <p id="info" class="center">We have selected a random number between 1 and 100. See if you can guess it in 10 turns
+      or fewer. We'll tell you if your guess was too high or too low.
+      <!-- Modal Trigger -->
+      <span class="waves-effect waves-light modal-trigger" href="#modal1"><i
+          class="material-icons">info_outline</i></span>
+
+      <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Additional info</h4>
+        <p>If your first 3 guesses are correct, you'll get a <span class="green-text">good</span> grade.</p>
+        <p>If correct in the next 4 guesses, you'll get a <span class="yellow-text">fair</span> grade.</p>
+        <p>And of course, the last 3 guesses attracts a <span class="red-text">poor</span> grade.</p>
+        <p>Let's test your guessing skill.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Ok</a>
+      </div>
+    </div>
+    </p>
+
+    <form action="#" id="form" class="row">
+      <label for="guessField">Enter a guess: </label>
+      <input type="number" id="guessField" class="guessField" placeholder="Enter a number value">
+      <br>
+      <input type="submit" value="Submit" class="guessSubmit btn-large col s3 offset-s1">
+      <input type="reset" value="Reset" class="gameReset btn-large col s3 offset-s4">
+    </form>
+    <div class="resultParas">
+      <p class="guesses"></p>
+      <div class="container results">
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+      </div>
+    </div>
+    <script src="Numberguessinggamescript.js"></script>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/materialize.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+
+</html>

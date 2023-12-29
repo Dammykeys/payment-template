@@ -1,3 +1,18 @@
+//Sidenav Button
+(function ($) {
+    $(function () {
+        $('.sidenav').sidenav();
+        $('.parallax').parallax();
+    }); // end of document ready
+})(jQuery); // end of jQuery name space
+
+
+//Floating action button
+$(document).ready(function () {
+    $('.fixed-action-btn').floatingActionButton();
+});
+
+
 //Back to top Scroll button
 window.addEventListener('scroll', function () {
     var scroll = document.querySelector('.scrollTop');
@@ -12,6 +27,7 @@ function scrollToTop() {
     });
 }
 
+
 //Preloader 
 window.addEventListener("load", () => {
     const preloader = document.querySelector(".preloader");
@@ -19,4 +35,17 @@ window.addEventListener("load", () => {
     preloader.addEventListener("transitionend", () => {
         document.body.removeChild(preloader);
     })
+});
+
+
+//Modal
+$(document).ready(function () {
+    $('.modal').modal();
+});
+
+
+//Collapsible list
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, true);
 });

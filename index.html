@@ -10,10 +10,9 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="#">
   <link rel="shortcut icon" href="images/dammykeys04_logo.png" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <script src="js/script.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" media="all">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection,print" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection,print" />
 </head>
 
 <body>
@@ -27,14 +26,16 @@
       <ul class="right hide-on-med-and-down">
         <li class="active"><a href="#"><i class="material-icons left">home</i> Home</a></li>
         <li><a href="src/payment.html"><i class=" material-icons left">payment</i>Pay</a></li>
-        <li><a href="#"><i class="material-icons left">reorder</i>Invoice</a></li>
+        <li><a href="src/news.html"><i class="material-icons left">public</i>LASU News</a></li>
+        <li><a href="src/receipt.html"><i class="material-icons left">reorder</i>Invoice</a></li>
         <li><a href="src/login.html"><i class="material-icons left">person</i>Login</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="index.html"><i class="material-icons left">home</i> Home</a></li>
+        <li class="active"><a href="index.html"><i class="material-icons left">home</i> Home</a></li>
         <li><a href="src/payment.html"><i class="material-icons left">payment</i>Pay</a></li>
-        <li><a href="#"><i class="material-icons left">reorder</i>Invoice</a></li>
+        <li><a href="src/news.html"><i class="material-icons left">public</i>LASU News</a></li>
+        <li><a href="src/receipt.html"><i class="material-icons left">reorder</i>Invoice</a></li>
         <li><a href="src/login.html"><i class="material-icons left">person</i>Login</a></li>
       </ul>
 
@@ -70,11 +71,12 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+            <h5 class="center">Fast Delivery</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our
-              custom components. Additionally, we refined animations and transitions to provide a smoother experience
-              for developers.</p>
+            <p class="light">We offer quick and reliable payment options, ensuring that you receive your checklists,
+              invoices and products as soon as possible. We've designed our checkout process to be fast and easy, so you
+              can complete your purchase and have your products shipped right away. At our platform, we're committed to
+              providing you with the best possible payment experience, including lightning-fast delivery.</p>
           </div>
         </div>
 
@@ -83,20 +85,33 @@
             <h2 class="center brown-text"><i class="material-icons">group</i></h2>
             <h5 class="center">User Experience Focused</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework
-              that incorporates components and animations that provide more feedback to users. Additionally, a single
-              underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light">At DAMMYKEYS, we understand that user experience is everything. That's why we've designed
+              our platform with you in mind, ensuring that every aspect of your experience is as smooth and seamless as
+              possible. From our intuitive interface to our simplified checkout process, everything is built to make
+              your experience quick and easy. We offer a range of payment options, including credit and debit cards,
+              bank transfers, and even digital wallets, so you can choose the option that's most convenient for you. Our
+              platform is also optimized for any devices (IOS/Android/Desktop) also installable as a app, so you can
+              easily make payments on-the-go. Plus, we're
+              constantly updating our platform with new features and improvements based on user feedback, so you can
+              always expect the best possible experience. At our platform, we're committed to providing you with an
+              exceptional user experience every time you use our service.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
+            <h5 class="center">Easy to use</h5>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users
-              get started. We are also always open to feedback and can answer any questions a user may have about
-              Materialize.</p>
+            <p class="light">Here at DAMMYKEYS, we believe that simplicity is key. That's why we've designed our
+              platform to be easy to use, whether you're a first-time user or an experienced pro. Our intuitive
+              interface guides you through the payment process step-by-step, so you can complete your transactions
+              quickly and easily. Plus, our simplified checkout process means you can make payments with just a few
+              clicks, without the need for any complex forms or confusing payment screens. We also provide detailed
+              instructions and helpful prompts throughout the process, so you always know what's happening and what to
+              do next. And if you ever have any questions or concerns, our dedicated customer support team is always
+              available to help. We believe that everyone should be able to use our platform with ease, and we're
+              committed to making sure that our service is accessible and user-friendly for all.</p>
           </div>
         </div>
       </div>
@@ -109,7 +124,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light black-text">A modern responsive front-end framework based on Material Design
+          <h5 class="header col s12 light black-text">Do not be left behinde, hop unto the cashless train.
           </h5>
         </div>
       </div>
@@ -126,12 +141,14 @@
           <h4>Contact Us</h4>
           <p class="left-align light">You can communicate directly with us on WhatsApp by clicking <a
               href="https://wa.link/55wceb">Here</a> or by clicking on the social icons on the page footer. You can also
-            give us a call. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi repudiandae reiciendis
-            mollitia est sequi neque dolores! Eius fugiat error et voluptates eum cum odio, tempore, vero rerum, modi
-            odit id. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut exercitationem aperiam atque
-            consequuntur, natus quas perspiciatis, ad corrupti perferendis saepe maxime repellat nulla beatae. Rerum
-            odio ex provident voluptatum?</p>
+            give us a call. Other means of communication are also provided down below. This is to facilitate
+            collaboration, accesibility of our services and for any complaint whatsoever, concerning this website and
+            our services. You can also leave your ratings and what improvements you'll like to experience in other to
+            give you a wonderful service. <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeLAZ2MvpMalo3VUAAj0c5sVWK2GgW-87rcWgu0WtF3j1L7og/viewform?usp=sf_link">Rate
+              us now.</a></p>
         </div>
+
       </div>
 
     </div>
@@ -142,7 +159,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light">Inspired by the cashless policy "rogbodiyan".</h5>
         </div>
       </div>
     </div>
@@ -152,34 +169,27 @@
   <footer class="page-footer teal">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
+        <div class="col l9 s12">
           <h5 class="white-text">Company Bio</h5>
           <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our
             full time job. Any amount would help support and continue development on this project and is greatly
             appreciated.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="https://www.facebook.com/Dammykeys04/"><i
+          <ul class="row">
+            <li class="col s4 m6 l12"><a class="white-text" href="https://www.facebook.com/Dammykeys04/"><i
                   class="material-icons">facebook</i></a></li>
-            <li><a class="white-text" href="https://wa.link/55wceb"><img class="social-logo" src="images/WhatsApp.png"
-                  alt="Twitter"></a></li>
-            <li><a class="white-text" href="mailto:immanueladeniyi7@gmail.com"><img class="social-logo"
-                  src="images/email.png" alt="Gmail"></a>
-            <li><a class="white-text" href="https://twitter.com/dammykeys04"><img class="social-logo"
-                  src="images/twitter.png" alt="Twitter"></a></li>
+            <li class="col s4 m6 l12"><a class="white-text" href="https://wa.link/55wceb"><img class="social-logo"
+                  src="images/WhatsApp.png" alt="Twitter"></a></li>
+            <li class="col s4 m6 l12"><a class="white-text" href="mailto:immanueladeniyi7@gmail.com"><img
+                  class="social-logo" src="images/email.png" alt="Gmail"></a>
+            <li class="col s4 m6 l12"><a class="white-text" href="https://twitter.com/dammykeys04"><img
+                  class="social-logo" src="images/twitter.png" alt="Twitter"></a></li>
+            </li>
+            <li class="col s4 m6 l12"> +23481 224 6828 <a class="white-text" href="tel:+2348122468628"><i
+                  class="material-icons">local_phone</i></a>
+            </li>
             </li>
           </ul>
         </div>
@@ -196,9 +206,9 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/script.js"></script>
   <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
