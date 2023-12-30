@@ -42,7 +42,8 @@ document.getElementById('login').addEventListener('submit', (e) => {
             if (snapshot.exists) {
                sessionStorage.setItem("user-info", JSON.stringify({
                   FirstName: snapshot.val().FirstName,
-                  LastName: snapshot.val().LastName
+                  LastName: snapshot.val().LastName,
+                  Email: snapshot.val().Email
                }))
                sessionStorage.setItem("user-creds", JSON.stringify(user));
                window.location.href = 'invoice.html';
@@ -58,7 +59,7 @@ document.getElementById('login').addEventListener('submit', (e) => {
          const errorCode = error.code;
          const errorMessage = error.message;
 
-         alert("Wrong Email or Password Detected" + errorMessage);
+         alert("Wrong Email or Password Detected" + errorCode);
       });
 
 

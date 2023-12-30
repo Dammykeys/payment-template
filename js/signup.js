@@ -47,6 +47,7 @@ document.getElementById('signup').addEventListener('submit', (e) => {
             LastName: lastName
          });
          alert('User created');
+         window.location.href = 'login.html';
       })
       .catch((error) => {
          const errorCode = error.code;
