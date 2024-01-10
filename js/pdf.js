@@ -121,7 +121,7 @@ invoiceForm.addEventListener('click', function generatePDF(e) {
          address: address,
          phone: phone,
          email: email,
-         otherInfo: "www.website.al",
+         otherInfo: "Palmpay Account: 8122468628",
       },
       invoice: {
          label: "Invoice #: ",
