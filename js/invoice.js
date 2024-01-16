@@ -11,10 +11,16 @@ let Signout = () => {
 let checkCreds = () => {
 
    if (!sessionStorage.getItem("user-creds")) {
-      console.log("creds is null");
       alert("Session has Expired!");
       window.location.href = "login.html"
    };
 };
+
+setTimeout(function () {
+   sessionStorage.removeItem('user-creds');
+   sessionStorage.removeItem('user-info');
+   alert("Session has Expired!");
+   window.location.href = "login.html";
+}, 300000);
 
 window.addEventListener('load', checkCreds);
