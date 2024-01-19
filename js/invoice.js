@@ -21,6 +21,6 @@ setTimeout(function () {
    sessionStorage.removeItem('user-info');
    alert("Session has Expired!");
    window.location.href = "login.html";
-}, 300000);
+}, 900000);
 
 window.addEventListener('load', checkCreds);
